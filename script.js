@@ -23,7 +23,15 @@ class LinkedList {
     }
   }
 
-  prepend(value) {}
+  prepend(value) {
+    const newNode = new Node(value);
+    if (this.nodes.head === null) {
+      this.nodes.head = newNode;
+    } else {
+      newNode.nextNode = this.nodes.head;
+      this.nodes.head = newNode;
+    }
+  }
 
   size() {}
 
@@ -43,9 +51,13 @@ class LinkedList {
 }
 
 let test = new LinkedList();
-test.append(1);
-test.append(2);
-test.append(3);
-console.log(test.nodes);
+// Append tests
+// test.append(1);
+// test.append(2);
+// test.append(3);
 
-console.log(test.nodes.head.nextNode.nextNode);
+// Prepend tests
+test.prepend(1);
+test.prepend(2);
+test.prepend(3);
+console.log(test.nodes);
