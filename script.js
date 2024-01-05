@@ -70,15 +70,20 @@ class LinkedList {
   }
 
   contains(value) {
-    // if (this.nodes.head === null) {
-    //   return this.nodes.head;
-    // } else {
-    //   let root = this.nodes.head;
-    //   while (root.nextNode) {
-    //     if (value === root) {
-    //     }
-    //   }
-    // }
+    if (this.nodes.head === null) {
+      return false;
+    } else if (this.nodes.head.value === value) {
+      return true;
+    } else {
+      let root = this.nodes.head;
+      while (root.nextNode) {
+        if (value === root.value) {
+          return true;
+        }
+        root = root.nextNode;
+      }
+      return false;
+    }
   }
 
   find(value) {}
@@ -98,4 +103,4 @@ test.prepend(1);
 test.prepend(2);
 test.prepend(3);
 
-// console.log(test.nodes);
+console.log(test.nodes);
