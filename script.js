@@ -86,7 +86,24 @@ class LinkedList {
     }
   }
 
-  find(value) {}
+  find(value) {
+    if (this.nodes.head === null) {
+      return null;
+    } else if (this.nodes.head.value === value) {
+      return 0;
+    } else {
+      let index = 0;
+      let root = this.nodes.head;
+      while (root) {
+        if (value === root.value) {
+          return index;
+        }
+        index++;
+        root = root.nextNode;
+      }
+      return null;
+    }
+  }
 
   toString() {}
 }
@@ -94,13 +111,13 @@ class LinkedList {
 let test = new LinkedList();
 
 // Append tests
-// test.append(1);
-// test.append(2);
-// test.append(3);
+test.append(1);
+test.append(2);
+test.append(3);
 
-// Prepend tests
-test.prepend(1);
-test.prepend(2);
-test.prepend(3);
+// // Prepend tests
+// test.prepend(1);
+// test.prepend(2);
+// test.prepend(3);
 
-console.log(test.nodes);
+// console.log(test.nodes);
