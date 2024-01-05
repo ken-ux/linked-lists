@@ -52,7 +52,7 @@ class LinkedList {
   }
 
   tail() {
-    if (this.nodes.head === null) {
+    if (this.nodes.head === null || this.nodes.head.nextNode === null) {
       return this.nodes.head;
     } else {
       let tailNode = this.nodes.head.nextNode;
@@ -65,9 +65,21 @@ class LinkedList {
 
   at(index) {}
 
-  pop() {}
+  pop() {
+    // Check if next NEXT node is null, if so then that means it's the last node
+  }
 
-  contains(value) {}
+  contains(value) {
+    // if (this.nodes.head === null) {
+    //   return this.nodes.head;
+    // } else {
+    //   let root = this.nodes.head;
+    //   while (root.nextNode) {
+    //     if (value === root) {
+    //     }
+    //   }
+    // }
+  }
 
   find(value) {}
 
@@ -82,7 +94,8 @@ let test = new LinkedList();
 // test.append(3);
 
 // Prepend tests
-// test.prepend(1);
-// test.prepend(2);
-// test.prepend(3);
-console.log(test.nodes);
+test.prepend(1);
+test.prepend(2);
+test.prepend(3);
+
+// console.log(test.nodes);
