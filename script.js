@@ -1,8 +1,7 @@
 class Node {
-  constructor(value, left, right) {
-    this.data = value;
-    this.left = left;
-    this.right = right;
+  constructor(value, next) {
+    this.value = value;
+    this.next = next;
   }
 }
 
