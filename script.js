@@ -33,7 +33,19 @@ class LinkedList {
     }
   }
 
-  size() {}
+  size() {
+    if (this.nodes.head === null) {
+      return 0;
+    } else {
+      let counter = 1;
+      let root = this.nodes.head;
+      while (root.nextNode) {
+        root = root.nextNode;
+        counter++;
+      }
+      return counter;
+    }
+  }
 
   head() {
     return this.nodes.head;
@@ -63,13 +75,14 @@ class LinkedList {
 }
 
 let test = new LinkedList();
+
 // Append tests
 // test.append(1);
 // test.append(2);
 // test.append(3);
 
 // Prepend tests
-test.prepend(1);
-test.prepend(2);
-test.prepend(3);
+// test.prepend(1);
+// test.prepend(2);
+// test.prepend(3);
 console.log(test.nodes);
