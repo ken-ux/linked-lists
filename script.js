@@ -35,9 +35,21 @@ class LinkedList {
 
   size() {}
 
-  head() {}
+  head() {
+    return this.nodes.head;
+  }
 
-  tail() {}
+  tail() {
+    if (this.nodes.head === null) {
+      return this.nodes.head;
+    } else {
+      let tailNode = this.nodes.head.nextNode;
+      while (tailNode.nextNode) {
+        tailNode = tailNode.nextNode;
+      }
+      return tailNode;
+    }
+  }
 
   at(index) {}
 
