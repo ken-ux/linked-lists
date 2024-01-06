@@ -73,7 +73,15 @@ class LinkedList {
   }
 
   pop() {
-    // Check if next NEXT node is null, if so then that means it's the last node
+    if (!this.nodes.head || !this.nodes.head.nextNode) {
+      this.nodes.head = null;
+    } else {
+      let root = this.nodes.head;
+      while (root.nextNode.nextNode) {
+        root = root.nextNode;
+      }
+      root.nextNode = null;
+    }
   }
 
   contains(value) {
@@ -121,6 +129,11 @@ let test = new LinkedList();
 test.append(1);
 test.append(2);
 test.append(3);
+test.append(4);
+
+test.pop();
+console.log(test.size());
+console.dir(test.nodes, { depth: null });
 
 // // Prepend tests
 // test.prepend(1);
