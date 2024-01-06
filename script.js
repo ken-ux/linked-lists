@@ -59,7 +59,18 @@ class LinkedList {
     }
   }
 
-  at(index) {}
+  at(index) {
+    let counter = 0;
+    let root = this.nodes.head;
+    while (root) {
+      if (counter === index) {
+        return root;
+      }
+      root = root.nextNode;
+      counter++;
+    }
+    return null;
+  }
 
   pop() {
     // Check if next NEXT node is null, if so then that means it's the last node
