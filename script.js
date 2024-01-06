@@ -120,7 +120,19 @@ class LinkedList {
     }
   }
 
-  toString() {}
+  toString() {
+    if (!this.nodes.head) {
+      return "null";
+    }
+    let string = "";
+    let root = this.nodes.head;
+    string += root.value;
+    while (root.nextNode) {
+      root = root.nextNode;
+      string += ` -> ${root.value}`;
+    }
+    return (string += " -> null");
+  }
 }
 
 let test = new LinkedList();
@@ -129,15 +141,10 @@ let test = new LinkedList();
 test.append(1);
 test.append(2);
 test.append(3);
-test.append(4);
-
-test.pop();
-console.log(test.size());
-console.dir(test.nodes, { depth: null });
 
 // // Prepend tests
-// test.prepend(1);
-// test.prepend(2);
-// test.prepend(3);
+test.prepend("a");
+test.prepend("b");
+test.prepend("c");
 
-// console.log(test.nodes);
+// console.dir(test.nodes, { depth: null });
