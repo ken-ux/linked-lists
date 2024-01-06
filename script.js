@@ -48,10 +48,10 @@ class LinkedList {
   }
 
   tail() {
-    if (this.nodes.head === null || this.nodes.head.nextNode === null) {
+    if (this.nodes.head === null) {
       return this.nodes.head;
     } else {
-      let tailNode = this.nodes.head.nextNode;
+      let tailNode = this.nodes.head;
       while (tailNode.nextNode) {
         tailNode = tailNode.nextNode;
       }
