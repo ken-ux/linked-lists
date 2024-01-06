@@ -34,17 +34,13 @@ class LinkedList {
   }
 
   size() {
-    if (this.nodes.head === null) {
-      return 0;
-    } else {
-      let counter = 1;
-      let root = this.nodes.head;
-      while (root.nextNode) {
-        root = root.nextNode;
-        counter++;
-      }
-      return counter;
+    let counter = 0;
+    let root = this.nodes.head;
+    while (root) {
+      root = root.nextNode;
+      counter++;
     }
+    return counter;
   }
 
   head() {
@@ -76,7 +72,7 @@ class LinkedList {
       return true;
     } else {
       let root = this.nodes.head;
-      while (root.nextNode) {
+      while (root) {
         if (value === root.value) {
           return true;
         }
